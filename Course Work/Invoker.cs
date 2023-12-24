@@ -117,6 +117,7 @@ public class Invoker
                                     "\n/items - " + showItems.Show() +
                                     "\n/purchases - " + showPurchases.Show() +
                                     "\n/balance - " + showBalance.Show() +
+                                    "\n/logout - " + logOut.Show() +
                                     "\n/exit - Finishes the work of the program.\n");
                 break;
             default:

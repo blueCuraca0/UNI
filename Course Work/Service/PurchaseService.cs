@@ -43,10 +43,10 @@ public class PurchaseService : IPurchaseService
          return purchaseRepository.ReadAllPurchases();
     }
 
-    public void PrintAllPurchases()
+    public void PrintUsersPurchases()
     {
 
-        List<Purchase> AllPurchases = purchaseRepository.ReadAllPurchases();
+        List<Purchase> AllPurchases = Program.currentUser.ReadAllPurchases();
 
         Console.WriteLine("------------------------------------------------------------------");
         Console.WriteLine("| ID | Customer       | Item         | Quantity | Total Price    |");

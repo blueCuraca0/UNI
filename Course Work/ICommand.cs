@@ -44,6 +44,7 @@ class LogOut : ICommand
     {
         Program.currentUser = null;
         Program.isLoggedIn = false;
+        Console.Clear();
     }
 
     public string Show()
@@ -99,7 +100,7 @@ class ShowPurchases : ICommand
 {
     public void Execute(object data)
     {
-        if (data is PurchaseService purchaseService) purchaseService.PrintAllPurchases();
+        if (data is PurchaseService purchaseService) purchaseService.PrintUsersPurchases();
         else Console.WriteLine("ERROR: data was corrupted");
     }
 

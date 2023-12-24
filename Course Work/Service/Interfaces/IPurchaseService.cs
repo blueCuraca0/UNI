@@ -11,5 +11,5 @@ public interface IPurchaseService
     void UpdatePurchase(int purchaseID, Purchase purchase);
     void DeletePurchase(int purchaseID);
     List<Purchase> ReadAllPurchases();
-    void PrintAllPurchases();
+    void PrintUsersPurchases();
 }

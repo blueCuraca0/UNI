@@ -70,42 +70,8 @@ public class Account
         Balance -= purchase.TotalPrice;
     }
 
-    public void GetPurchases(string currentName)
+    public List<Purchase> ReadAllPurchases()
     {
-
-        Console.WriteLine($"Current balance: {Balance}");
-        Console.WriteLine($"Total purchases: {PurchaseCount}\n");
-
-        Console.WriteLine("--------------------------------------------------------------------------------------");
-        Console.WriteLine("| № game | Game Type      | Opponent             | Result        | Players Ratings   |");
-        Console.WriteLine("--------------------------------------------------------------------------------------");
-
-        /*for (int i = 0; i < purchaseHistory.Count; i++)
-        {
-
-            var game = purchaseHistory[i];
-            string opponentName;
-            int currentRating;
-            int opponentRating;
-
-            bool isEqual = string.Equals(currentName, game.CurrentPlayer.Login);
-            if (isEqual)
-            {
-                opponentName = game.OpponentPlayer.Login;
-                currentRating = game.CurrentRating;
-                opponentRating = game.OpponentRating;
-            }
-            else
-            {
-                opponentName = game.CurrentPlayer.Login;
-                currentRating = game.OpponentRating;
-                opponentRating = game.CurrentRating;
-            }
-
-            Console.WriteLine($"| {game.gameIndex,-6} | {game.Type(),-14} | {opponentName,-20} | {(currentRating < opponentRating ? "LOSE" : "WIN"),-13} | {currentRating,-3} / {opponentRating,-12}|");
-        }*/
-
-        Console.WriteLine("--------------------------------------------------------------------------------------");
-
+        return purchaseHistory;
     }
 }

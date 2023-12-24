@@ -43,15 +43,18 @@ class Program
 
         invoker.Perform("/help", isLoggedIn, accountService, itemService, purchaseService);
 
+        bool wasLoggedBeforeCommand = false;
+
         while (DO_CONTINUE)
         {
-
-            if (currentUser == null)  Console.WriteLine("Please, login or register.");
+            if (!wasLoggedBeforeCommand)  Console.WriteLine("Please, login or register.");
 
             Console.WriteLine("Enter a command:");
             string command = Console.ReadLine() ?? "/help";
             invoker.Perform(command, isLoggedIn, accountService, itemService, purchaseService);
-            Console.WriteLine("\n==========================================================\n");
+            
+            if (!wasLoggedBeforeCommand) Console.Clear();
+            wasLoggedBeforeCommand = isLoggedIn;
         }
 
     }

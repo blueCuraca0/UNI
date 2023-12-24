@@ -14,10 +14,10 @@
 
     public void CreateAccount()
     {
-        Console.Write("\nEnter your login: ");
+        Console.Write("Enter your login: ");
         string login = Console.ReadLine() ?? "[noNameError]";
 
-        Console.Write("\nEnter your password: ");
+        Console.Write("Enter your password: ");
         string password = Console.ReadLine() ?? "[noPasswordError]";
 
         accountRepository.CreateAccount(login, password);
@@ -26,10 +26,10 @@
 
     public bool LogIn() 
     {
-        Console.Write("\nEnter your login: ");
+        Console.Write("Enter your login: ");
         string login = Console.ReadLine() ?? "[noNameError]";
 
-        Console.Write("\nEnter your password: ");
+        Console.Write("Enter your password: ");
         string password = Console.ReadLine() ?? "[noPasswordError]";
 
         if (accountRepository.LogIn(login, password))
@@ -61,7 +61,7 @@
     public void ReadPlayerGames(int accountId)
     {
         Account account = accountRepository.ReadAccount(accountId);
-        account.GetPurchases(account.Login);
+        account.ReadAllPurchases();
     }
 
     public List<Account> ReadAllAccounts()
