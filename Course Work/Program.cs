@@ -53,8 +53,10 @@ class Program
             string command = Console.ReadLine() ?? "/help";
             invoker.Perform(command, isLoggedIn, accountService, itemService, purchaseService);
             
-            if (!wasLoggedBeforeCommand) Console.Clear();
+            if (!wasLoggedBeforeCommand)
             wasLoggedBeforeCommand = isLoggedIn;
+
+            Console.WriteLine("");
         }
 
     }
